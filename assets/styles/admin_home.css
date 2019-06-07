@@ -1,0 +1,83 @@
+#edit, #editStatusButton, #saveStatusChangeButton, #cancelEditButton, 
+#saveLocationChangeButton, #cancelLocationEditButton,
+#saveDestinationChangeButton, #cancelDestinationEditButton{
+    border: none;
+    padding: 3px 5px;
+    color: white;
+    background-color:  rgb(48, 39, 39, 0.6);
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+#editLocationButton, #editDestinationButton{
+    background-color: inherit;
+    color: rgb(30, 30, 31);
+}
+
+#editStatusInput, #location, #destination, #saveStatusChangeButton, #saveLocationChangeButton, #saveDestinationChangeButton, #cancelEditButton, #cancelLocationEditButton, #cancelDestinationEditButton{
+    display: none;
+}
+
+#editStatusInput{
+    font-size: 10px;
+}
+
+#location, #destination{
+    border: none;
+    padding: 3px;
+    width: 100px;
+}
+
+/* #edit, #editStatusButton, #saveStatusChangeButton, #cancelEditButton, 
+#editLocationButton, #saveLocationChangeButton, #cancelLocationEditButton,
+#editDestinationButton, #saveDestinationChangeButton, #cancelDestinationEditButton{
+    border: none;
+    padding: 3px 5px;
+    color: white;
+    background-color:  rgb(48, 39, 39, 0.6);
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+#editStatusInput, #location, #saveStatusChangeButton, #saveLocationChangeButton, #cancelEditButton, #cancelLocationEditButton{
+    display: none;
+}
+
+#editStatusInput{
+    font-size: 10px;
+}
+
+#location{
+    border: none;
+    padding: 3px;
+    width: 100px;
+}
+
+#destination{
+    border: none;
+    padding: 5px;
+    width: 80%;
+    background-color: rgb(226, 222, 222);
+} */
+
+
+@media screen and (max-width:600px){
+    #edit, #editStatusButton, #saveStatusChangeButton, #cancelEditButton, 
+    #editLocationButton, #saveLocationChangeButton, #cancelLocationEditButton,
+    #editDestinationButton, #saveDestinationChangeButton, #cancelDestinationEditButton{
+    border: none;
+    padding: 3px 5px;
+    font-size: 8px;
+    border-radius: 5px;
+    }
+
+    #editStatusInput{
+        font-size: 10px;
+    }
+
+    #location{
+        border: none;
+        padding: 1px;
+        width: 100px;
+    }
+}

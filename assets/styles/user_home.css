@@ -1,0 +1,213 @@
+
+
+.parcelModal, .editModal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.parcelModal-content, .editModal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.parcelModal-header, .editModal-header {
+    padding: 6px ;
+    background-color:rgb(56, 104, 150);;
+    font-size: 15px;
+    color: white;
+}
+
+.parcelModal-body, .editModal-body{
+    padding: 10px 16px;
+    text-align: center;
+}
+
+.parcelModal-body form{
+    font-size: 12px;
+}
+
+.parcelModal-body form input, .editModal-body input{
+    border: none;
+    border-bottom: ridge;
+    width: 70%;
+}
+
+.parcelModal-body form table{
+    background-color:inherit;
+    
+    
+}
+
+.parcelModal-body form table th{
+    color:black; 
+    font-size:12px; 
+    font-family:inherit;
+    font-weight: lighter;
+    
+}
+
+.parcelModal-body form table input{
+    border:none; 
+    background-color:inherit;
+    text-align: center;
+}
+
+.parcelModal-body form table button{
+    background-color:rgb(223, 219, 219, 0.3); 
+    width:100%;
+    padding: 5px;
+}
+
+.parcelModal-footer #right, .editModal-footer #right{
+
+    float: right;
+}
+
+.parcelModal-footer #right button, .editModal-footer #right button{
+    font-size: 13px;
+
+    border: none;
+    background-color: white;
+    color: rgb(30, 30, 31);
+    cursor: pointer;
+}
+
+.parcelModal-footer, .editModal-footer{
+    padding: 22px 16px;
+    background-color:rgb(56, 104, 150);
+    color: white;
+    font-size: 12px;
+}
+
+.cancelModal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.cancelModal-content {
+    position: relative;
+    background-color: rgb(56, 104, 150);
+    color: white;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.cancelModal-header {
+    padding: 2px 16px;
+    color: black;
+    margin-left: 10%;
+    font-size: 12px;
+}
+
+.cancelModal-body {
+    padding: 30px 16px;
+    text-align: center;
+}
+
+#myInput {
+    width: 40%;
+    margin-left: 30%;
+    
+}
+#image{
+    margin-top: 30%;
+    width:500px;
+    height:600px;
+    margin-left: 20%
+}
+.selected {
+    background-color: rgb(56, 104, 150);
+    color: white;
+}
+.add-member{
+  display: inline-block;
+  padding: 10px 15px;
+  font-size:15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:  rgb(56, 104, 150);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-left: 20%;
+}
+
+@media screen and (max-width: 800px){  
+    .parcelModal-content {
+        width: 80%;
+    }
+    
+    
+    .parcelModal-body {
+        padding: 30px 5px;
+    }
+    
+    .parcelModal-body form{
+        font-size: 8px;
+    }
+    
+    .parcelModal-body form input{
+        border: none;
+        border-bottom: ridge;
+    }
+    
+    .parcelModal-body form table{
+        background-color:inherit;
+        
+    }
+    
+    .parcelModal-body form table th{
+        font-size:8px;         
+    }
+
+
+    
+    .parcelModal-body form table button{
+        width:100%;
+        padding: 5px;
+    }
+    
+
+    .parcelModal-body form #right button{
+        font-size: 10px;
+        padding: 4px 4px;
+    }
+    
+    
+    .cancelModal-content {
+        width: 80%;
+    }
+
+
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../assets/images/icon.png" rel="icon">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/styles/admin_home.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/styles/user_home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <span><a href="admin_home.html">SEND It<i class="fa fa-paper-plane-o"></i></a></span>
+        </div>
+        <ul>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-user-circle"></i> <span id="usernayme"></span> </a>
+                <div class="dropdown-content">
+                    <a href="admin_settings.html"><i class="fa fa-user"></i> Profile</a>
+                    <a href="../../index.html"><i class="fa fa-power-off"></i> LogOut</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn" id="not"><i class="fa fa-fw fa-bell-o"></i> Notifications <span id="number"></span> </a>
+                <div class="dropdown-content" id="nots">
+                  
+                </div>
+            </li>
+            <li><a href="users.html"><i class="fa fa-fw fa-users"></i> Users</a></li>
+            <li><a href="admin_parcels.html#create" ><i class="fa fa-fw fa-cart-plus"></i> New Order</a></li>
+            <li><a href="admin_parcels.html#sec" class="active"><i class="fa fa-fw fa-edit"></i> My Parcels</a></li>
+            <li><a href="admin_home.html" onclick="getParcels();"><i class="fa fa-fw fa-edit"></i> All Parcels</a></li>
+        </ul>
+    </header><br><br>
+    <hr>
+
+    <section>
+        <div id="create">
+            <fieldset id="form1">
+                <legend>New Parcel Delivery Order</legend>
+                <form id="parcelForm">
+                    <div>
+                        Category:<br>
+                        Recipient Name: <br>
+                        Recipient Mobile:  <br>
+                        Pickup location: <br>
+                        Destination:  <br>
+                        Total weight:
+                    </div>
+
+                    <div>
+                        <select id="description">
+                            <option value="Electronics">Electronics</option>
+                            <option value="Perishable goods">Perishable goods</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Home appliances">Home appliances</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Bags and shoes">Bags and shoes</option>
+                            <option value="Toys">Toys</option>
+                        </select>
+                        <input type="text" id="recipient_name" pattern="[A-Za-z][,]?[' ']?+" title="Must be letters" required placeholder="Enter Recipient Name">
+                        <span class="errormsg" id="recnameErr"></span>
+                        <input type="text" id="recipient_mobile" pattern="[0][7][1-9][0-9][0-9]{3}[0-9]{3}" maxlength="10" minlength="10" title="Must start with 07 and be 10 digits long" required placeholder="Enter Recipient Mobile">
+                        <span class="errormsg" id="recmobErr"></span>
+                        <input type="text"  id="pickup_location" pattern="[A-Za-z][,]?+" title="Must be letters" required>
+                        <span class="errormsg" id="picklocErr"></span>
+                        <input type="text" id="parcel_destination" pattern="[A-Za-z][,]?+" title="Must be letters" required>
+                        <span class="errormsg" id="destErr"></span>
+                        <input type="number" id="weight" required placeholder="Enter Parcel Weight" pattern="[0-9]+" title="Must be numbers" > 
+                        <span class="errormsg" id="wgtErr"></span>
+                    </div>
+                            
+                            
+                </form>
+                <p id="error"></p>
+                            
+                    <div id="right">
+                        <button onclick="createParcel(); return false;">Add parcel</button>  <button onclick="cancel(); return false;">Cancel</button>
+                    </div>
+            </fieldset>
+
+            <div class="rightgrid">
+                
+                <div id="googlemap"></div>
+                <br>
+                <div class="route">
+                    <b>Distance:</b> <span id="distt"></span><br><br>
+                    <b>Estimated time:</b> <span id="time"></span><br><br>
+                    <b>Estimated Price (UGX):</b> <span id="pxx"></span> 
+                </div>
+                
+
+                <br>
+                
+            </div>
+            
+                   
+        </div>
+    </section>
+
+    <section id="sec">
+        <div class="topbar">
+            <div class="search">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Orders by destination"><button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <span id="filter">
+                Filter by Date Created 
+                <input id="day" type="number" min="1" max="31" placeholder="Day" onkeyup="filterByDate()">
+                <select id="month" onchange="filterByMonth()">
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sept">Sept</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec" selected>Dec</option>
+                </select>
+                <select id="year" onchange="filterByYear()">
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                </select>
+                
+            </span>
+     
+        </div>
+        <br><br>
+        <table id="allmyparcels">
+            <thead>
+                <tr>
+                    <th>Parcel ID</th>
+                    <th>
+                        <select id="status" onchange="filter();">
+                            <option value="all">Status</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="pending">Pending</option>
+                            <option value="intransit">In-transit</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </th>
+                    <th>Current Location</th>
+                    <th>Destination</th>
+                    <th>Date Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="myparcels">
+                
+            </tbody>
+        </table>
+        
+
+        <div id="pag">
+            Total: <span id="ttl"></span> <button id="prev"><i class="fa fa-fw fa-chevron-left"></i></button> <button id="next"><i class="fa fa-fw fa-chevron-right"></i></button> <button id="first">1</button> <button id="wholelist">Show All</button>
+        </div>
+        
+        <div id="details" class="modal">
+            
+        </div>
+
+        <div id="maps" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="closeview">&times;</span>
+                    <p><b>Parcel ID.</b>: <span id="parcelid"></span></p>
+                </div>
+                <div class="mbody">
+                    <div class="modal-body1">
+                        <p><b>Date Created</b>: <span id="date"></span></p>
+                        <p><b>Category</b>: <span id="desc"></p>
+                        <p><b>Weight (kg)</b>: <span id="wgt"></p>
+                        <p><b>Status</b>: <span id="stat"></p>
+                            <p><b>Present Location</b>: <span id="pres"></p>
+                        <fieldset id="data">
+                            <legend>Delivery details</legend>
+                                <b><p>Recipient Name</b>: <span id="rname"></p>
+                                <b><p>Recipient Mobile</b>: <span id="rmob"></p>   
+                                <b><p>Pick up Location</b>: <span id="pick"></p>
+                                <b><p>Destination</b>: <span id="dest"></p>
+                        </fieldset>
+                        
+                    </div>
+                    <div class="modal-body">
+                        <div id="map"></div>
+                        <br><br>
+                        <span>
+                            <b>Distance:</b> <span id="dist"></span><br><br>
+                            <b>Estimated Price (UGX):</b> <span id="px"></span>
+                        </span>
+                               
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <span>Send IT &copy; 2018</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="editdest" class="editModal">
+            <div class="editModal-content">
+                <div class="editModal-header">
+                    <span class="closeEdit">&times;</span>
+                    <p>Change Destination</p>
+                </div>
+                <div class="editModal-body">
+                    <form>
+                        Pickup Location: <span id="pickloc"></span><br>
+                        New Destination of parcel <span id="id"></span>: <input type="text" id="newdest" pattern="[A-Za-z][,]?+" title="Must be letters" required><br> 
+                        <span id="newdestErr"></span>
+                    </form>
+                    <br>
+                    <div id="editmap"></div>
+                    <div class="newroute">
+                            <b>Distance:</b> <span id="newdist"></span><br><br>
+                            <b>Estimated time:</b> <span id="newtime"></span><br><br>
+                            <b>Estimated Price (UGX):</b> <input type="text" id="newpx" disabled>
+                        </div>
+                </div>
+                <div class="editModal-footer">
+                    <div id="right">
+                        <button id="saveDestinationChangeButto">Save Changes</button>
+                        <button id="cancelDestinationEditButto" type="reset">Cancel</button>
+                        
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <div id="cancelModal" class="cancelModal">
+            <div class="cancelModal-content">  
+                <div class="cancelModal-header">
+                    <span class="closeCancel">&times;</span>
+                </div>   
+                <div class="cancelModal-body">
+                    <p>Are you sure you want to cancel order <span id="pid"></span>?</p>
+                    <button id="cancelParcel">Yes</button> <button id="cancelcancel">No</button>
+                </div>                    
+            </div> 
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <div class="popup-header">
+                </div>
+                <div class="popup-body">
+                    <p id="msg"></p>
+                </div>
+                <div class="popup-footer">
+                    <button id="ok" onclick="closeModal();">OK</button>
+                </div>
+            </div>
+        
+        </div>
+      
+        
+    </section>
+    <footer>
+        <span>Send IT &copy; 2018</span>
+    </footer>
+    <script src="../../scripts/createParcel.js"></script>
+    <script src="../../scripts/getParcels.js"></script>
+    <script src="../../scripts/editDestination.js"></script>
+    <script src="../../scripts/editStatus.js"></script>
+    <script src="../../scripts/getAParcel.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/notification.js"></script>
+    <script src="../../scripts/custom.js"></script>
+    <script src="../../scripts/pagination.js"></script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKohLhQMAEAB2DhBzAPwZW4C6xXnGu2yg&libraries=places&callback=viewMap&region=UG"></script> -->
+    <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKohLhQMAEAB2DhBzAPwZW4C6xXnGu2yg&libraries=places&callback=dynamicmap"></script>
+</body>
+</html>

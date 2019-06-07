@@ -1,0 +1,350 @@
+
+.settingsContainer{
+    width: 70%;
+    margin: auto;
+    height: inherit;
+    border: 1px solid #ddd; 
+    /* background-color: rgba(48, 39, 39, 0.8); */
+    background-color: white;
+    margin-top: 50px;
+
+
+    display: grid;
+    align-content: space-evenly;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    grid-gap: 10px;
+    padding: 60px;
+}
+
+.prof{
+    display: grid;
+    align-content: space-evenly;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.prof button{
+    background-color:rgb(56, 104, 150);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+}
+
+#editdefault{
+    background-color:inherit;
+    color: rgb(56, 104, 150);
+    border: none;
+}
+
+
+#info{
+    line-height: 20pt;
+    color: rgb(126, 125, 125);
+}
+
+#info #title{
+    font-size: 30px;
+}
+
+#info #role{
+    font-size: 20px;
+}
+
+.field{
+    color: rgb(37, 102, 163);
+}
+.pic{
+    background-color: rgb(207, 205, 205);
+    margin: auto;
+    height: 270px;
+    /* border-style: ridge; */
+    border-width: 1px;
+    width: 200px;
+    border-color: black;
+}
+
+.pic #uname{
+    background-color:rgb(56, 104, 150);
+    height: 60px;
+    /* bottom: 0; */
+    padding-bottom: 0%;
+    width: inherit;
+    position: absolute;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* #name{
+    font-size: 40px;
+    
+} */
+
+#email, #mobile{
+    font-size: 15px;
+}
+table td{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(30, 30, 31);
+    text-align: center;
+    font-size: 12px;
+}
+
+table th{
+    font-size: 12px;
+}
+
+.pic #i{
+    font-size:200px;
+    color: rgb(219, 215, 215);
+    padding-bottom: 10px;
+}
+
+#userform{
+    width: 60%;
+    margin: auto;
+    display: none;
+}
+
+#userform button{
+    background-color:rgb(56, 104, 150);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto;
+    float: right;
+}
+
+#userinfo{
+    color: white;
+    display: grid;
+    align-content: space-evenly;
+    grid-template-columns: 30% 50%;
+    justify-content: center;
+    grid-gap: 10px;
+    padding: 50px;
+
+    font-size: 20px;
+    
+}
+
+#userinfo input{
+    width: 100%;
+    border: none;
+    padding: 8px;
+}
+
+#userinfo{
+    line-height: 30pt;
+}
+
+#userform legend{
+    color: white;
+    font-size: 20px;
+}
+
+#dell{
+    background-color: green;
+}
+
+#trans{
+    background-color: orangered;
+}
+
+#canc{
+    background-color: red;
+}
+
+#pnd{
+    background-color: rgb(161, 155, 155);
+    color: rgb(32, 2, 2);
+}
+
+/* 
+
+#delivered{
+    background-color: green;
+    color: white;
+}
+
+#intransit{
+    background-color: orangered;
+    color: white;
+}
+
+#pending{
+    background-color: white;
+    color: rgb(32, 2, 2);
+}
+
+#cancelled{
+    background-color: red;
+    color: white;
+}
+
+.bigBox{
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    color: rgb(32, 2, 2);
+    text-align: center;
+    font-size: 50px;
+} */
+
+/* .tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 13px;
+    width: 20%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+} */
+
+
+.tab {
+    /* overflow: hidden; */
+    border: 1px solid #ccc;
+    background-color:  rgb(56, 104, 150);
+    text-align: center;
+    height: 30px;
+}
+
+
+  
+.tab span {
+    /* background-color: rgb(56, 104, 150);
+   
+    outline: none;
+    cursor: pointer;
+    padding: 10px 26px;
+    
+    width: 100%; */
+    color: white;
+    
+}
+
+.tablinks{
+    color: rgb(56, 104, 150);
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: rgb(56, 104, 150);
+    color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    /* display: none; */
+    /* padding: 6px 12px; */
+    border: 1px solid #ccc;
+    border-top: none;
+
+    display: grid;
+    align-content: space-evenly;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    grid-gap: 10px;
+    padding: 20px;
+    
+}
+
+.tabcontent > div{
+    background-color: rgb(56, 104, 150);
+    opacity: 0.8;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    width: 150px;
+    /* margin: auto; */
+    border-color: black;
+    border-width: 10px;
+    color: white;
+    height: 40px;
+}
+
+.tabcontent #all{
+    width: 195%;
+}
+
+.tabcontent div span{
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px){
+    .settingsContainer{
+        float: none;
+        margin: auto;
+        height: 300px;
+    }
+    
+    table td{
+
+        font-size: 11px;
+    }
+
+    #i{
+        font-size:150px;
+    }
+    
+    .box{
+        padding: 10px;
+    }
+    
+    .bigBox{
+        padding: 20px;
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width: 900px){
+    .settingsContainer{
+        float: none;
+        margin: auto;
+        height: 300px;
+    }
+    
+    table td{
+        font-size: 14px;
+    }
+
+    #i{
+        font-size:200px;
+    }
+    
+    .box{
+        padding: 15px;
+    }
+    
+    .bigBox{
+        padding: 25px;
+        font-size: 35px;
+    }
+}

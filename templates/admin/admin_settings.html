@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../assets/images/icon.png" rel="icon">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/styles/user_settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="../../scripts/index.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <span>SEND It<i class="fa fa-paper-plane-o"></i></span>
+        </div>
+        <ul>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="active" class="dropbtn"><i class="fa fa-user-circle"></i> <span id="usernayme"></span> </a>
+                <div class="dropdown-content">
+                  <a href="#" class="active"><i class="fa fa-user"></i> Profile</a>
+                  <a href="../../index.html"><i class="fa fa-power-off"></i> LogOut</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn" id="not"><i class="fa fa-fw fa-bell-o"></i> Notifications <span id="number"></span> </a>
+                <div class="dropdown-content" id="nots">
+                    
+                </div>
+            </li>
+            <li><a href="users.html"><i class="fa fa-fw fa-users"></i> Users</a></li>
+            <li><a href="admin_parcels.html#create"><i class="fa fa-fw fa-cart-plus"></i> New Order</a></li>
+            <li><a href="admin_parcels.html#sec" ><i class="fa fa-fw fa-edit"></i> My Parcels</a></li>
+            <li><a href="admin_home.html"><i class="fa fa-fw fa-edit"></i> All Parcels</a></li>
+        </ul>
+    </header><br><br>
+    <hr>
+    <section class="profpage">
+        <div class="settingsContainer">
+            <div class="prof">
+                <span class="pic">
+                    <i class="fa fa-user-circle" id="i"></i>
+                    <span id="uname"></span>
+                </span>
+                
+                <span id="info">
+                    <span id="title">PROFILE INFO</span><br>
+                    <span id="role"></span><br>
+                    &nbsp;<span class="field">Name:</span>  <span id="name"></span><br>
+                    
+                    &nbsp;<span class="field">ID:</span> <span id="userid"></span><br>
+                    &nbsp;<span class="field">Mobile:</span> <span id="mobile"></span><br>
+                    &nbsp;<span class="field">Email:</span> <span id="email"></span><br>
+                </span>
+                <button id="edit"><i class="fa fa-pencil"></i>Edit Profile</button>
+            </div>
+                        
+            <div>
+                <div class="tab">
+                    <span class="tablinks">STATS</span>
+                </div>
+    
+                <div id="stats" class="tabcontent" >  
+                    <div id="all">All Parcels <br><span id="total"> </span></div><br>
+                    <div id="dell">Delivered   <br><span id="delivered"></span></div>
+                    <div id="trans">In-transit <br><span id="intransit"></span></div>
+                    <div id="pnd">Pending <br><span id="pending"></span></div>
+                    <div id="canc">Cancelled  <br><span id="cancelled"></span></div>
+                </div>
+            </div>
+
+        </div>
+        
+        <br>
+        <fieldset id="userform">
+            <legend>Edit Profile</legend>
+            <form id="userinfo">
+                <div>
+                    Profile Picture: <br>
+                    ID:<br>
+                    User Name: <br>
+                    User Mobile:  <br>
+                    Email Address: <br>
+                    Status:  <br>
+                    Default Pick up location address:
+                </div>
+
+                <div>
+                    <input type="file" name="pic" accept="image/*">
+                    <input type="text" id="usersid" disabled>
+                    <input type="text" id="usersname" disabled>
+                    <input type="tel"  id="usersmobile" pattern="[0][7][1-9][0-9][0-9]{3}[0-9]{3}" maxlength="10" minlength="10" title="Must start with 07 and be 10 digits long" required>
+                    <span id="mobErr"></span>
+                    <input type="text" id="usersmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email addess. For example example@gmail.com">
+                    <span id="mailErr"></span>
+                    <input type="text" id="usersstatus" disabled> 
+                    <input type="text" id="defaultloc" pattern="[A-Za-z][,]?+" title="Must be letters">
+                    <span id="locErr"></span> 
+                </div>      
+            </form>
+            <button onclick="cancelEdit(); return false;">Cancel</button>&nbsp; &nbsp;
+            <button onclick="editUserInfo()">Save changes</button>  
+        </fieldset>
+            
+       
+        <br><br>
+
+        <div id="popup" class="popup">
+                <div class="popup-content">
+                    <div class="popup-header">
+                    </div>
+                    <div class="popup-body">
+                        <p id="msg"></p>
+                    </div>
+                    <div class="popup-footer">
+                        <button id="ok" onclick="closeModal();">OK</button>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <footer>
+        <span>Send IT &copy; 2018</span>
+    </footer>
+    <script src="../../scripts/profile.js"></script>
+    <script src="../../scripts/custom.js"></script>
+    <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKohLhQMAEAB2DhBzAPwZW4C6xXnGu2yg&libraries=places&callback=defaultlocation"></script>
+</body>
+</html>

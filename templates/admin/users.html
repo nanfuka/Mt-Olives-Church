@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../assets/images/icon.png" rel="icon">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/styles/admin_home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <span>SEND It<i class="fa fa-paper-plane-o"></i></span>
+        </div>
+        <ul>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-user-circle"></i> <span id="usernayme"></span> </a>
+              <div class="dropdown-content">
+                <a href="admin_settings.html"><i class="fa fa-user"></i> Profile</a>
+                <a href="../../index.html"><i class="fa fa-power-off"></i> LogOut</a>
+              </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn" id="not"><i class="fa fa-fw fa-bell-o"></i> Notifications <span id="number"></span> </a>
+                <div class="dropdown-content" id="nots">
+                    
+                </div>
+            </li>
+            <li><a href="#" class="active"><i class="fa fa-fw fa-users"></i> Users</a></li>
+            <li><a href="admin_parcels.html#create"><i class="fa fa-fw fa-cart-plus"></i> New Order</a></li>
+            <li><a href="admin_parcels.html#sec" ><i class="fa fa-fw fa-edit"></i> My Parcels</a></li>
+            <li><a href="admin_home.html"><i class="fa fa-fw fa-edit"></i> All Parcels</a></li>
+          </ul>
+    </header><br><br>
+    <hr>
+    <section>
+        <div class="topbar">
+            <div class="search">
+                <input type="text" id="myInput" onkeyup="searchUsers()" placeholder="Search Users by name"><button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <br><br>
+        <table id="allusers">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Mobile Contact</th>
+                    <th>Account Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>   
+        <div id="popup" class="popup">
+                <div class="popup-content">
+                    <div class="popup-header">
+                    </div>
+                    <div class="popup-body">
+                        <p id="msg"></p>
+                    </div>
+                    <div class="popup-footer">
+                        <button id="ok" onclick="closeModal();">OK</button>
+                    </div>
+                </div>
+            
+            </div>     
+    </section>
+    <footer>
+        <span>Send IT &copy; 2018</span>
+    </footer>
+    <script src="../../scripts/users.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/custom.js"></script>
+</body>
+</html>
