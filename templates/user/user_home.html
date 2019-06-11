@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,23 +13,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../../scripts/index.js"></script>
 </head>
+
 <body>
     <header>
         <div class="brand">
-            <span><a href="userhome.html">SDA MT.OLIVES CHURCH</a></span>
+            <span>SDA MT.OLIVES CHURCH</span>
         </div>
         <ul>
             <li class="dropdown">
                 <!-- <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-user-circle"></i> <span id="usernayme"></span> </a> -->
                 <div class="dropdown-content">
-                    <a href="../user/user_settings.html"><i class="fa fa-user"></i> Profile</a>
-                    <a href="../../index.html"><i class="fa fa-power-off"></i> LogOut</a>
-                    <li><a href="#logout"> Logout</a></li>
-                    <li><a href="#cells"> View Cells</a></li>
-                    <li><a href="#members"> View All Members</a></li>
-                    <li><a href="#register" class="selected"> Register New Member</a></li>
-                    <li><a href="#home"> Home</a></li> 
+                    <!-- <a href="../user/user_settings.html"><i class="fa fa-user"></i> Profile</a> -->
+                    <!-- <a href="../../index.html"><i class="fa fa-power-off"></i> LogOut</a> -->
+                    <!-- <li><a href="../user/user_settings.html"><i class="fa fa-user"></i> Profile</a></li>
+                    <li><a href="../../index.html"> Logout</a></li> -->
+            <li><a href="../../index.html"><i class="fa fa-power-off"></i> Logout</a></li>
+            <!-- <li><a href="#cells"> View Cells</a></li> -->
+            <li class="dropdown">
+                <a href="#" onmouseover="myFunction()" class="dropbtn">View Cells</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="../admin/cell_profile.html">Najjeera</a>
+                    <a href="../admin/cell_profile.html">Bukoto</a>
+                    <a href="../admin/cell_profile.html">Kaliwajjala</a>
+                    <a href="../admin/cell_profile.html">Naalya</a>
                 </div>
+            </li>
+            <li><a href="../admin/admin_home.html"> View All Members</a></li>
+            <li><a href="user_home.html" class="selected"> Register New Member</a></li>
+            <li><a href="../../index.html"> Home</a></li>
+            </div>
             </li>
             <!-- <li><a href="#" class="active"><i class="fa fa-fw fa-edit"></i> My Parcels</a></li> -->
         </ul>
@@ -42,27 +55,28 @@
                     <div>
                         Id number:<br>
                         Name: <br>
-                        Gender:  <br>
+                        Gender: <br>
                         Date of Birth: <br>
-                        Marital Status:  <br>
+                        Marital Status: <br>
                         Cell: <br>
                         Education level:<br>
                         Profession: <br>
-                        Occupation:  <br>
+                        Occupation: <br>
                         Place of work: <br>
-                        Residence:  <br>
+                        Residence: <br>
                         Phone contact:<br>
                         Email Address:<br>
                         Date of Baptism: <br>
-                        Place of Baptism:  <br>
+                        Place of Baptism: <br>
                         Baptising Pastor: <br>
-                        Former Religion:  <br>
+                        Former Religion: <br>
                         Image url:
                     </div>
 
                     <div>
                         <input type="text" id="member_id" placeholder="Member's Id number">
-                        <input type="text" id="recipient_name" pattern="[A-Za-z][,]?[' ']?+" title="Must be letters" required placeholder="Enter Recipient Name">
+                        <input type="text" id="recipient_name" pattern="[A-Za-z][,]?[' ']?+" title="Must be letters"
+                            required placeholder="Enter Recipient Name">
                         <span class="errormsg" id="recnameErr"></span>
                         <select id="gender">
                             <option value="female">Female</option>
@@ -70,40 +84,43 @@
                         </select>
                         <input type="date" id="date_of_birth" required placeholder="Enter date of birth">
                         <select id="marital-status">
-                                <option value="single">Single</option>
-                                <option value="married">Married</option>
-                                <option value="cohabiting">Cohabiting</option>
-                                <option value="separated">Separated</option>
-                                <option value="divorced">Divorced</option>
-                                <option value="widowed">Widowed</option>         
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="cohabiting">Cohabiting</option>
+                            <option value="separated">Separated</option>
+                            <option value="divorced">Divorced</option>
+                            <option value="widowed">Widowed</option>
                         </select>
-                        <input type="text"  id="Cell" placeholder="Fellowship Cell">
+                        <input type="text" id="Cell" placeholder="Fellowship Cell">
                         <input type="text" id="education_level" placeholder="Education level" required>
-                        <input type="text" id="profession" required placeholder="Enter profession"> 
-                        <input type="text"  id="occupation" placeholder="Occupation">
+                        <input type="text" id="profession" required placeholder="Enter profession">
+                        <input type="text" id="occupation" placeholder="Occupation">
                         <input type="text" id="place-of-workl" placeholder="Place of work">
-                        <input type="text" id="residence" required placeholder="Place of Residence"> 
-                        <input type="text"  id="phone_contact" placeholder="Phone contact">
+                        <input type="text" id="residence" required placeholder="Place of Residence">
+                        <input type="text" id="phone_contact" placeholder="Phone contact">
                         <input type="text" id="email" placeholder="Email address">
-                        <input type="date" id="date_of_baptism" required placeholder="Date of Baptism"> 
-                        <input type="text"  id="place_of_baptism" placeholder="Place of Baptism">
-                        <input type="text"  id="baptising_pastor" placeholder="Name of Pastor who Baptised">
+                        <input type="date" id="date_of_baptism" required placeholder="Date of Baptism">
+                        <input type="text" id="place_of_baptism" placeholder="Place of Baptism">
+                        <input type="text" id="baptising_pastor" placeholder="Name of Pastor who Baptised">
                         <input type="text" id="former_religion" placeholder="Former Religion" required>
-                        <input type="file" id="image_url" name= "myfile">                       
+                        <input type="file" id="image_url" name="myfile">
                     </div>
                 </form>
                 <p id="error"></p>
-                            
-                    <div id="right">
-                        <button class="add-member" onclick="createParcel(); return false;">Add member</button> &nbsp;&nbsp;&nbsp;&nbsp; <button class="add-member" onclick="cancel(); return false;">Cancel</button>
-                    </div>
+
+                <div id="right">
+                    <button class="add-member" onclick="createParcel(); return false;">Add member</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <button class="add-member"
+                        onclick="cancel(); return false;">Cancel</button>
+                </div>
             </fieldset>
 
             <div class="rightgrid">
                 <div class="search">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search members by Name"><button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search members by Name"><button
+                        type="submit"><i class="fa fa-search"></i></button>
                 </div>
-                
+
                 <div id="image">
                     <img src="../../assets/images/SDA-Logo.png" alt="SDA logo" width="400" height="400">
                 </div>
@@ -117,10 +134,10 @@
                  -->
 
                 <br>
-                
+
             </div>
-            
-                   
+
+
         </div>
     </section>
 
@@ -293,4 +310,5 @@
         <span>My E-Church &copy; 2019</span>
     </footer>
 </body>
+
 </html>

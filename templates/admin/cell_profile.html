@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My E-Church</title>
+    <title>SendIT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../assets/images/icon.png" rel="icon">
     <link rel="stylesheet" type="text/css" media="screen" href="../../assets/styles/admin_home2.css" />
@@ -27,6 +27,7 @@
                     <a href="../user/user_settings.html"><i class="fa fa-user"></i> Profile</a>
                     <!-- <a href="../../index.html"><i class="fa fa-power-off"></i> LogOut</a> -->
             <li><a href="../../index.html"><i class="fa fa-power-off"></i> Logout</a></li>
+            <!-- <li><a href="#cells"> View Cells</a></li> -->
             <li class="dropdown">
                 <a href="#" onmouseover="myFunction()" class="dropbtn">View Cells</a>
                 <div id="myDropdown" class="dropdown-content">
@@ -70,17 +71,17 @@
     </header>
     <br><br> -->
 
-    <section>
-        <div class="topbar">
-            <div class="search">
-                <input type="text" id="myInput" onkeyup="myFunction()"
-                    placeholder="Search Member by Member's Name"><button type="submit"><i
-                        class="fa fa-search"></i></button>
-            </div>
-            <!-- <div class="search">
+    <!-- <section> -->
+    <h1 id="cell-name">KAGUGUBE</h1>
+    <div class="topbar">
+        <div class="search">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Member by Member's Name"><button
+                type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <!-- <div class="search">
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Orders by present location"><button type="submit"><i class="fa fa-search"></i></button>
             </div> -->
-            <!-- <span id="filter">
+        <!-- <span id="filter">
                 <span id="filterText">Filter by Date Created</span>
                 <input id="day" type="number" min="1" max="31" placeholder="Day" onkeyup="filterByDate()">
                 <select id="month" onchange="filterByMonth()">
@@ -102,11 +103,38 @@
                     <option value="2019">2019</option>
                 </select>
             </span> -->
+    </div>
+    <br><br>
+    <div class="leadership">
+        <div id="firstbox">
+            <div id="firstimage"></div>
+            <div class="name">Samanya</div>
         </div>
-        <br><br>
-        <h2>Members Table</h2>
-        <table id="allparcels">
-            <!-- <thead>
+        <div id="firstbox">
+            <div id="firstimage"></div>
+            <div class="name">David</div>
+        </div>
+        <div id="firstbox">
+            <div id="firstimage"></div>
+            <div class="name">Statistics
+                <ul class="name1"><br>
+                    <li>
+                        Total Membership: 15
+                    </li><br>
+                    <li>
+                        Total Males: 8
+                    </li><br>
+                    <li>
+                        Total Females: 7
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="cell-table">Cell Membership </h1>
+    <table id="allparcels">
+        <!-- <thead>
                 <tr>
                     <th>Parcel ID</th>
                     <th>
@@ -128,58 +156,50 @@
 
             </tbody> -->
 
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Cell</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td> <a href="/templates/user/user_settings.html">Irene Samanya</a></td>
-                <td>Female</td>
-                <td>Kaliwajjala</td>
-                </a>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Vincent Zirimwabagabo</td>
-                <td>Male</td>
-                <td>Naalya</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Flavia Zirimwabagabo</td>
-                <td>Female</td>
-                <td>Naalya</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Henry Samanya</td>
-                <td>Male</td>
-                <td>Kaliwajjala</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Esther Odora</td>
-                <td>Female</td>
-                <td>Kiwatule</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Maroria Matoya</td>
-                <td>Male</td>
-                <td>Bukoto</td>
-            </tr>
-        </table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Irene Samanya</td>
+            <td>Female</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Vincent Zirimwabagabo</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Flavia Zirimwabagabo</td>
+            <td>Female</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Henry Samanya</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Esther Odora</td>
+            <td>Female</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Maroria Matoya</td>
+            <td>Male</td>
+        </tr>
+    </table>
 
-        <div id="pag">
-            Members: <span id="ttl"></span> <button id="prevpg"><i class="fa fa-fw fa-chevron-left"></i></button>
-            <button id="nextpg"><i class="fa fa-fw fa-chevron-right"></i></button> <button id="firstpg">1</button>
-            <button id="list">Show All</button>
-        </div>
-    </section>
-        <!-- <div id="maps" class="modal">
+    <div id="pag1">
+        Members: <span id="ttl"></span> <button id="prevpg"><i class="fa fa-fw fa-chevron-left"></i></button>
+        <button id="nextpg"><i class="fa fa-fw fa-chevron-right"></i></button> <button id="firstpg">1</button>
+        <button id="list">Show All</button>
+    </div>
+
+    <!-- <div id="maps" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="closeview">&times;</span>
@@ -254,12 +274,12 @@
                     <button id="ok" onclick="closeModal();">OK</button>
                 </div>
             </div>
-        </div>
-    </section> -->
+        </div>-->
+    <!-- </section> -->
 
-    <footer>
+    <footers class="myfooter">
         <span>My E-Church &copy; 2019</span>
-    </footer>
+    </footers>
 
     <script src="../../scripts/getParcels.js"></script>
     <script src="../../scripts/editPresentLocation.js"></script>
