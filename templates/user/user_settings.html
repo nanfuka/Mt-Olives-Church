@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="brand">
-            <span><a href="userhome.html">SDA MT.OLIVES CHURCH</a></span>
+            <span>SDA MT.OLIVES CHURCH</span>
         </div>
         <ul>
             <li class="dropdown">
@@ -22,12 +22,21 @@
                 <div class="dropdown-content">
                     <a href="../user/user_settings.html"><i class="fa fa-user"></i> Profile</a>
                     <a href="../../index.html"><i class="fa fa-power-off"></i> LogOut</a>
-                    <li><a href="#logout"> Logout</a></li>
-                    <li><a href="#cells"> View Cells</a></li>
-                    <li><a href="#members"> View All Members</a></li>
-                    <li><a href="#register"> Register New Member</a></li>
-                    <li><a href="#profile" class="selected"> Profile</a></li>
-                    <li><a href="#home"> Home</a></li> 
+                    <li><a href="../../index.html"><i class="fa fa-power-off"></i> Logout</a></li>
+                    <!-- <li><a href="#cells"> View Cells</a></li> -->
+                    <li class="dropdown">
+                            <a href="#" onmouseover="myFunction()" class="dropbtn">View Cells</a>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a href="../admin/cell_profile.html">Najjeera</a>
+                              <a href="../admin/cell_profile.html">Bukoto</a>
+                              <a href="../admin/cell_profile.html">Kaliwajjala</a>
+                              <a href="../admin/cell_profile.html">Naalya</a>
+                            </div>
+                    </li>
+                    <li><a href="../admin/admin_home.html"> View All Members</a></li>
+                    <li><a href="user_home.html"> Register New Member</a></li>
+                    <li><a href="user_settings.html" class="selected"> Profile</a></li>
+                    <li><a href="../../index.html"> Home</a></li> 
                 </div>
             </li>
             <!-- <li><a href="#" class="active"><i class="fa fa-fw fa-edit"></i> My Parcels</a></li> -->
@@ -50,7 +59,7 @@
     </header><br><br> -->
     <hr>
     <section class="profpage">
-        <div class="settingsContainer">
+        <div class="settingsContainer" id="prof1">
             <div class="prof">
                 <span class="pic">
                     <i class="fa fa-user-circle" id="i"></i>
@@ -62,14 +71,27 @@
                     <span id="role"></span><br>
                     &nbsp;<span class="field">Name:</span>  <span id="name"></span><br>
                     &nbsp;<span class="field">ID:</span> <span id="userid"></span><br>
+                    &nbsp;<span class="field">Gender:</span> <span id="userid"></span><br>
                     &nbsp;<span class="field">Mobile:</span> <span id="mobile"></span><br>
                     &nbsp;<span class="field">Email:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Marital Status:</span> <span id="userid"></span><br>
+                    &nbsp;<span class="field">Fellowship Cell:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Education level:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Profession:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Occupation:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Residence:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Date of Baptism:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Place of Baptism:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Name of Pastor who Baptised:</span> <span id="email"></span><br>
+                    &nbsp;<span class="field">Former Religion:</span> <span id="email"></span><br>
                     <!-- <span>Default Pickup Location:<span id="defaultpl">op</span></span> -->
                 </span>
-                <button id="edit"><i class="fa fa-pencil"></i>Edit Profile</button>
+                <!-- <button id="edits"><i class="fa fa-pencil"></i>Edit Profile</button> -->
+                <button onclick="edits()"><i class="fa fa-pencil"></i>Edit Profile</button>
+                <!-- <button onclick="edits()">Edit Profile</button>   -->
             </div>
                         
-            <div>
+            <!-- <div>
                 <div class="tab">
                     <span class="tablinks">STATS</span>
                 </div>
@@ -80,37 +102,67 @@
                     <div id="pnd">Pending <br><span id="pending"></span></div>
                     <div id="canc">Cancelled  <br><span id="cancelled"></span></div>
                 </div>
-            </div>
+            </div> -->
         </div>
-        <br>
+        <!-- <br> -->
         <fieldset id="userform">
             <legend>Edit Profile</legend>
             <form id="userinfo">
                 <div>
                     Profile Picture: <br>
+                    Name:<br>
                     ID:<br>
-                    User Name: <br>
-                    User Mobile:  <br>
+                    Gender:<br>
+                    Mobile:  <br>
                     Email Address: <br>
-                    Status:  <br>
-                    Default Pick up location address:
+                    Marital status: <br>
+                    Fellowship Cell: <br>
+                    Education level: <br>
+                    Profession:<br>
+                    Occupation: <br>
+                    Residence:<br>
+                    Date of Baptism:<br>
+                    Place of Baptism:<br>
+                    Baptising Pastor:<br>
+                    Former Religion:                    
                 </div>
-
                 <div>
                     <input type="file" name="pic" accept="image/*">
-                    <input type="text" id="usersid" disabled>
-                    <input type="text" id="usersname" disabled>
+                    <input type="text" id="usersname">
+                    <input type="text" id="usersid">
+                    <select id="gender">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
                     <input type="tel"  id="usersmobile" pattern="[0][7][1-9][0-9][0-9]{3}[0-9]{3}" maxlength="10" minlength="10" title="Must start with 07 and be 10 digits long" required>
                     <span id="mobErr"></span>
-                    <input type="text" id="usersmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email addess. For example example@gmail.com">
+                    <input type="text" id="usersmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email addess. For example example@gmail.com">
                     <span id="mailErr"></span>
-                    <input type="text" id="usersstatus" disabled> 
+                    <select id="marital-status">
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="cohabiting">Cohabiting</option>
+                        <option value="separated">Separated</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>         
+                    </select>
+                    <input type="text" id="cell">
+                    <input type="text" id="Education-level">
+                    <input type="text" id="Profession">
+                    <input type="text" id="Occupation">
+                    <input type="text" id="Residence">
+                    <input type="text" id="Date of Baptism">
+                    <input type="text" id="Place of Baptism">
+                    <input type="text" id="Baptising Pastor">
+                    <input type="text" id="Former Religion">  
+
+                    <!-- <input type="text" id="usersstatus" disabled> 
                     <input type="text" id="defaultloc" pattern="[A-Za-z][,]?+" title="Must be letters">
                     <span id="locErr"></span> 
-                    <span id="serverErr"></span> 
+                    <span id="serverErr"></span>  -->
                 </div>      
             </form>
-            <button onclick="cancelEdit(); return false;">Cancel</button>&nbsp; &nbsp;
+            <button onclick="cancelEdit()">Cancel</button>&nbsp; &nbsp; &nbsp; &nbsp;
             <button onclick="editUserInfo()">Save changes</button>  
         </fieldset>
             
@@ -131,7 +183,7 @@
     </section>
 
     <footer>
-        <span>Send IT &copy; 2018</span>
+        <span>My E-church &copy; 2019</span>
     </footer>
 
     <script src="../../scripts/profile.js"></script>

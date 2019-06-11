@@ -100,3 +100,9 @@ function signupContainer(){
     document.getElementById("login").style.display = 'none';
     document.getElementById("signup").style.display = 'block';
 }
+function edits(){
+    document.getElementById("prof1").style.display = 'none';
+    document.getElementById("userform").style.display = 'block';
+    
+
+}
