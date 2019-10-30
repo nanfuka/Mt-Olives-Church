@@ -64,9 +64,14 @@ function editProfile(userid, username, usermail, usermobile, status, defaultloc)
     }
 }
 
-function cancelEdit(){
-    document.querySelector("#userform").style.display = "none";
-}
+function cancelEdits(){
+    // window.location.href = "../user_settings.html";
+    // document.querySelector("#userform").style.display = "none";
+    
+    document.getElementById("prof1").style.display = 'block';
+    // document.getElementById("userform").style.display = 'block';  
+    }
+
 
 (function totalNoOfUserParcels(){
     let token = localStorage.getItem("access_token");

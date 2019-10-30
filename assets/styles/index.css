@@ -40,8 +40,8 @@
 
 
 html{
-    /* background-color: rgb(56, 104, 150); */
-    background-color: white;
+    background-color: rgb(56, 104, 150);
+    /* background-color: white; */
 }
 
 
@@ -180,7 +180,7 @@ li a:hover{
 
 input:focus:invalid, input:invalid {
     /* insert your own styles for invalid form input */
-    -moz-box-shadow: none;
+    /* -moz-box-shadow: none; */
     /* border-color: red; */
     color: rgb(218, 12, 12);
     font-size: 14px;
@@ -198,6 +198,9 @@ input:focus:invalid, input:invalid {
     margin-left: 40%;
     text-decoration: none;
     color: white;
+    width: 100px;
+    height: 40px;
+    
 }
 
 
@@ -436,10 +439,10 @@ footer span{
         margin-top: 40%;
     }
     
-    .first img{
-        /* height:130%; */
+    /* .first img{
+        height:130%;
         
-    }
+    } */
     
     .right_container{
         height: 450px;

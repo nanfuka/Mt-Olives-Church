@@ -17,13 +17,17 @@
             <span>SDA MT.OLIVES CHURCH</span>
         </div>
         <ul>
-            <li><a href="#logout"> Logout</a></li>      
+            <!-- <li><a href="#logout"> Logout</a></li>    -->
+            <li><a href="../../index.html"><i class="fa fa-power-off"></i> Logout</a></li>   
 
         </ul>
     </header>
     <section >
         <div class="first">
-            <img src="../assets/images/homePg.png">
+            <!-- <img src="../assets/images/homePg.png"> -->
+            
+            <img src = "assets/images/homePg.png">
+            <img src="/templates/user/user_home.html" alt="">
             <div class="right_container">
                 <div class="toptext">
                     <h2>About the Application</h2>
@@ -41,12 +45,12 @@
                         <i class="fa fa-user-circle"></i>
                     </div><br>
                     <form>
-                        <span id="ics"><i class="fa fa-user-o "></i></span>  <input type="text" id="login_name" required><br>
-                        <span id="ics"><i class="fa fa-unlock-alt"></i></span> &nbsp;<input type="password" id="login_password" required><br>
+                        <span id="ics"><i class="fa fa-user-o "></i></span>  <input type="text" id="login_name"><br>
+                        <span id="ics"><i class="fa fa-unlock-alt"></i></span> &nbsp;<input type="password" id="login_password"><br>
                         <p id="err"></p>
-                        <button class="loginButton">
-                        <a href="templates/user/user_home.html">Admin Login</a>
-                        </button>
+                        <button class="loginButton" onclick="Login(); return false">Admin Login</button>
+                        <!-- <a href="templates/user/user_home.html">Admin Login</a> -->
+                        <!-- </button> -->
                         <!-- <button class="loginButton" onclick="login(); return false;"></button>Admin Login</button> &nbsp; -->
                         <!-- <span>or</span>
                         <button class="option" onclick="signupContainer();">Create an Account</button> -->
@@ -55,103 +59,9 @@
             </div>
         </div>
     </section>
-
-                <!-- <div id="signup">
-                    <div class="icon">
-                        <i class="fa fa-user-plus"></i>
-                    </div><br>
-                    <form name="signupform">
-                        <div class="tooltip">
-                            <span id="ics"><i class="fa fa-user-o "></i></span> <input type="text" id="user_name" placeholder="User Name" pattern="[A-Za-z]+" title="Must be letters" required>
-                            <span id="err1"></span>
-                        </div><br>
-                        <div class="tooltip">
-                            <span id="ics"><i class="fa fa-envelope-o "></i></span> <input type="email" id="user_email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email addess. For example example@gmail.com" required><br>
-                            <span id="er2"></span>
-                            <span class="tooltiptext" id="errs"></span>
-                        </div><br>
-                        <span id="ics"><i class="fa fa-phone "></i></span> 
-                        <select id="country" name="country">
-                            <option data-countryCode="UG" value="256" selected>UG (+256)</option>
-                        </select> <input type="tel" id="user_mobile" placeholder="0772123456" pattern="[0][7][1-9][0-9][0-9]{3}[0-9]{3}" maxlength="10" minlength="10" title="Must start with 07 and be 10 numbers long" required>
-                        <span id="er3"></span><br>
-                        <span id="ics"><i class="fa fa-unlock-alt "></i></span> &nbsp;<input type="password" id="user_password" placeholder="Password" required pattern=".{9,}" title="Must be more 9 or more characters long">
-                        <span id="er4"></span><br>
-                        <span id="ics"><i class="fa fa-unlock-alt "></i></span> &nbsp;<input type="password" id="confirm_user_password" placeholder="Confirm Password" required>
-                        <p id="passworderr"></p>
-                        <button class="signupButton" onclick="signup(); return false;">Register member</button>&nbsp;  <span style="color:whitesmoke;"> or</span>  <button class="option" onclick="loginContainer();">Login Instead</button>
-                    </form>
-                </div>  -->
-            <!-- </div>
-        </div>   
-    </section>    -->
-
-    <!-- <section >
-        <div id="about">
-            <div class="abouttext">
-                <h2>About the Application</h2>
-                <p>
-                My E-Church is a reliable church manager<br> 
-                that can be used to capture and analyze <br>
-                all the vital information about church members. <br> 
-                It can be installed both on the computer <br>
-                and android smart phones. 
-                </p> 
-            </div>
-            <div class="text">
-                <h2>Using the application</h2>
-            </div>
-                
-            <div class="grid-container">
-                <div>
-                    <i class="fa fa-user-plus"></i><br>Create an account<br><br>
-                    <span>Register with SEND IT to place parcel delivery orders.</span>
-                </div>
-                    
-                <div>
-                    <i class="fa fa-map-marker"></i><br>Enter Parcel and Delivery details<br><br>
-                    <span> This includes the pickup and destination details.</span>
-                </div>
-                
-                <div>
-                    <i class="fa fa-money"></i><br>Get price estimate<br><br>
-                    <span>Get price estimate based on parcel weight and distance.</span>
-                </div>
-
-                <div>
-                    <i class="fa fa-plus"></i><br>Place your order<br><br>
-                    <span>Submit your order.</span>
-                </div>
-
-                <div>
-                    <i class="fa fa-pencil"></i><br>Modify order<br><br>
-                    <span>If you may, modify the destination before 12 hours after order placement.</span>
-                </div>
-                    
-                <div>
-                    <i class="fa fa-asterisk"></i><br>View parcel details<br><br>
-                    <span>View details of all and specific parcel delivery orders.</span>
-                </div>  
-            </div>
-        </div>
-    </section> -->
-
-    <!-- <div id="popup" class="popup">
-        <div class="popup-content">
-            <div class="popup-header">
-            </div>
-            <div class="popup-body">
-                <p id="msg"></p>
-            </div>
-            <div class="popup-footer">
-                <button id="ok">OK</button>
-            </div>
-        </div>
-    </div> -->
-
     <footer>
         <span>My E-church &copy; 2019</span>
     </footer>
-
+    <script src="validation.js"></script>
 </body>
 </html>
