@@ -597,6 +597,10 @@ fieldset legend{
 
 }
 
+#mem{
+    color: black;
+margin-top: 10%;
+}
 
 
 @media screen and (max-width: 800px){

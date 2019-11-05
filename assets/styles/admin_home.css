@@ -64,6 +64,11 @@
     background-color: rgb(226, 222, 222);
 } */
 
+#mem{
+    color: black;
+margin-top: 10%;
+} 
+
 
 @media screen and (max-width:600px){
     #edit, #editStatusButton, #saveStatusChangeButton, #cancelEditButton, 

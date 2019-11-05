@@ -17,13 +17,17 @@
     padding: 60px;
 }
 
+/* .prof{
+    display: grid; */
+    /* align-content: space-evenly; */
+    /* grid-template-columns: 50% 50%; */
+    /* justify-content: center; */
+    /* grid-gap: 10px;
+    padding: 20px; */
+/* } */
 .prof{
-    display: grid;
-    align-content: space-evenly;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
-    grid-gap: 10px;
-    padding: 20px;
+margin-left: 15%;
+font-size: 120%;
 }
 
 .prof button{
@@ -46,6 +50,8 @@
 #info{
     line-height: 20pt;
     color: rgb(126, 125, 125);
+    margin-left: 120%;
+    display: flex;
 }
 
 #info #title{
@@ -61,7 +67,7 @@
 }
 .pic{
     background-color: rgb(207, 205, 205);
-    margin: auto;
+    /* margin: auto; */
     height: 270px;
     /* border-style: ridge; */
     border-width: 1px;
@@ -71,14 +77,15 @@
 
 .pic #uname{
     background-color:rgb(56, 104, 150);
-    height: 60px;
+    height: 40px;
     /* bottom: 0; */
     padding-bottom: 0%;
     width: inherit;
-    position: absolute;
+    /* position: absolute; */
     color: white;
     text-align: center;
     font-size: 30px;
+    margin-left: 120%;
 }
 
 /* #name{
